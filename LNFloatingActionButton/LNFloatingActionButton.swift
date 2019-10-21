@@ -246,7 +246,7 @@ open class LNFloatingActionButton: UIView {
     
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         for cell in cells() {
-            let pointForTargetView = cell.convert(point, from: self)
+            let pointForTargetView = self.convert(point, to: cell)
             
             if cell.bounds.contains(pointForTargetView) {
                 if cell.isUserInteractionEnabled {
